@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>4aac1889-4729-465a-8c50-a5218859d8af</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200121145640_InitialDb.cs" />
+    <Compile Remove="Migrations\20200121145640_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\20200123150651_DB_v2.cs" />
+    <Compile Remove="Migrations\20200123150651_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200123153317_DB_v2.cs" />
+    <Compile Remove="Migrations\20200123153317_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200123153454_DB_v2.cs" />
+    <Compile Remove="Migrations\20200123153454_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200123153934_DB_v2.cs" />
+    <Compile Remove="Migrations\20200123153934_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200124081458_DB_v2.cs" />
+    <Compile Remove="Migrations\20200124081458_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200124082658_DB_v2.cs" />
+    <Compile Remove="Migrations\20200124082658_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200124083700_DB_v2.cs" />
+    <Compile Remove="Migrations\20200124083700_DB_v2.Designer.cs" />
+    <Compile Remove="Migrations\20200128153746_DB_v3.cs" />
+    <Compile Remove="Migrations\20200128153746_DB_v3.Designer.cs" />
+    <Compile Remove="Migrations\20200129145045_database_v3.cs" />
+    <Compile Remove="Migrations\20200129145045_database_v3.Designer.cs" />
+    <Compile Remove="Migrations\20200203081856_db_v4.cs" />
+    <Compile Remove="Migrations\20200203081856_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203082353_db_v4.cs" />
+    <Compile Remove="Migrations\20200203082353_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203082526_db_v4.cs" />
+    <Compile Remove="Migrations\20200203082526_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203082810_db_v4.cs" />
+    <Compile Remove="Migrations\20200203082810_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203083515_db_v4.cs" />
+    <Compile Remove="Migrations\20200203083515_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203083558_db_v4.cs" />
+    <Compile Remove="Migrations\20200203083558_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200203085004_db_v4.cs" />
+    <Compile Remove="Migrations\20200203085004_db_v4.Designer.cs" />
+    <Compile Remove="Migrations\20200206091044_db_v5.cs" />
+    <Compile Remove="Migrations\20200206091044_db_v5.Designer.cs" />
+    <Compile Remove="Migrations\20200206091231_db_v5.cs" />
+    <Compile Remove="Migrations\20200206091231_db_v5.Designer.cs" />
+    <Compile Remove="Migrations\20200408071410_db_v3.cs" />
+    <Compile Remove="Migrations\20200408071410_db_v3.Designer.cs" />
+    <Compile Remove="Migrations\20200715091116_DB_live_v01.cs" />
+    <Compile Remove="Migrations\20200715091116_DB_live_v01.Designer.cs" />
+    <Compile Remove="Migrations\20200715092029_DB_live_v01.cs" />
+    <Compile Remove="Migrations\20200715092029_DB_live_v01.Designer.cs" />
+    <Compile Remove="Migrations\20200715092853_DB_live_v01.cs" />
+    <Compile Remove="Migrations\20200715092853_DB_live_v01.Designer.cs" />
+    <Compile Remove="Migrations\20200715111007_DB_live_v01.cs" />
+    <Compile Remove="Migrations\20200715111007_DB_live_v01.Designer.cs" />
+    <Compile Remove="Migrations\20200715122638_DB_live_v1.cs" />
+    <Compile Remove="Migrations\20200715122638_DB_live_v1.Designer.cs" />
+    <Compile Remove="Migrations\20200715122951_DB_live_v1.cs" />
+    <Compile Remove="Migrations\20200715122951_DB_live_v1.Designer.cs" />
+    <Compile Remove="Migrations\20200715130011_db_live1.cs" />
+    <Compile Remove="Migrations\20200715130011_db_live1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Novell.Directory.Ldap.NETStandard2_0" Version="3.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\icons\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+
+</Project>

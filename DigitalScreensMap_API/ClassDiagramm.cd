@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DigitalScreensMap_API.Controllers.MonitorsController" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAFAAAAAAAgAAAAAAAg=</HashCode>
+      <FileName>Controllers\MonitorsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DigitalScreensMap_API.Controllers.UsersController" Collapsed="true">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAABAAAAAAAAAKAAAAIAAAAEAAAAACAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DigitalScreensMap_API.Data.MonitorContex">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAgABAAAAACEAAAABAAABAAAAAAAAA=</HashCode>
+      <FileName>Data\MonitorContex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DigitalScreensMap_API.Models.Monitor">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAIAAACgABCgAAQABAAAAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>Models\Monitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DigitalScreensMap_API.Repository.MonitorRepository">
+    <Position X="2.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEAAAAAAAIIAAAAAAAAAAAAAAAAoAAAACAAA=</HashCode>
+      <FileName>Repository\MonitorRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.133" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

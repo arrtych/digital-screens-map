@@ -1,0 +1,510 @@
+﻿body {
+    overflow-x: hidden;
+    /* background-color: #E4E4E4 !important; */
+}
+
+.navbar-custom {
+    background-color: #004152 !important;
+}
+.header-color {
+    background-color: #004152 !important;
+}
+#menu-header-logout {
+    margin-left: auto;
+}
+
+.fa-tv,.fa-ship {
+    color: #004152 !important;
+}
+.menu-tv {
+    color: white !important; 
+}
+#monitors-page, #map-page {
+    background-color: #eef1f1bd;
+}
+
+.project-name-header {
+    padding-left: 1em !important;
+    padding-right: 0.5em !important;
+    color: #00EDCA !important;
+    font-weight: 500;
+}
+
+.right {
+    float: right;
+}
+
+/* Scroll styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+/*Icons
+Monitor
+<i class="fas fa-tv"></i>
+
+Ship
+<i class="fas fa-ship"></i>
+
+Room
+<i class="far fa-image"></i>
+
+Edit
+<i class="far fa-edit"></i>
+
+Delete 
+<i class="fas fa-trash-alt"></i>
+
+Add 
+<i class="far fa-plus-square"></i>
+
+Eye/Show
+
+<i class="fas fa-eye"></i>
+*/
+
+ /* body.admin-page {
+    font-size: 0.9rem !important;
+}  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+#myCanvas {
+    border: 1px solid black;
+    /* max-width: initial; */
+    /* max-height: initial; */
+}
+.main-row {
+    height: 100vh !important;
+}
+
+.canvas-show-style {
+    display: none;
+}
+#defaultPicture {
+    width: 100%;
+}
+
+#root {
+    margin-top: 3.5rem;
+}
+
+#select-room  {
+    width: 70%;
+    padding-top: 14px;
+    margin: 0 auto;
+}
+
+#select-vessel {
+    width: 70%;
+    padding-top: 14px;
+    margin: 0 auto;
+}
+
+.main-monitors {
+    padding-top: 1em;
+}
+
+.current-monitor {
+    /* background: #b1b1b1; */
+    background: #c1c1c199;
+    padding: 0.6em;
+    border-radius: 1px;
+    margin: 1em;
+    color: #004152;
+    font-weight: 400;
+    border-radius: 2%;
+    /* border: 1px solid #acb1b1; */
+    border: 1px solid #004152;
+}
+/* .current-monitor :hover{
+    background-color: red;
+} */
+
+.current-monitor > button {
+    margin: 5px;
+}
+
+.mappage-monitor-icon {
+    color: black;
+}
+
+#mappage-circle-icon {
+
+}
+
+/* monitor.html Styles */
+
+#monitors-page  .room-item {
+    height: 2.5em;
+    /* margin-left: 1em; */
+}
+.room-active {
+    color: #007bff
+}
+.room-inactive {
+    color: black;
+}
+
+.room-item-name {
+    font-size: 1.1em;
+}
+
+
+.left-block, .right-block {
+    max-height: 750px;
+}
+.left-block {
+    overflow: auto;
+    /* overflow-y:scroll; */
+    
+}
+
+
+.mons-green {
+    background-color:#00c851;
+    width:30px;
+    height: 30px;
+}
+
+.mons-red {
+    background-color: red;
+    width:30px;
+    height: 30px;
+}
+.mons-blue {
+    background-color: blue;
+    width:30px;
+    height: 30px; 
+}
+
+.mons-all {  
+    max-width: 165px;
+    margin-top: 5px;
+    position: fixed;    
+    right: 30px;
+    color: #004152;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#monitors-total {
+    padding: 0.5em;
+    margin-left: 0.5em;
+    color: #004152;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 1.3em;
+}
+
+#room-monitors {
+    margin-left: 0.75em;
+}
+
+.tsm-room-url-div {
+    margin-top: 0.5em;
+    margin-left: 0.7em;
+    margin-right: -3em;
+
+}
+
+#tsm-room-url-a {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Monitors page */
+
+.main-content {
+    padding-top: 1em;
+}
+
+.search-block {
+    margin-left: -1.1em;
+    width: 52.9%!important;
+}
+.search-block input {
+    width: 25%!important;
+}
+
+
+.monitors-amount-badge {
+    margin-left: 0.5em;
+    position: absolute;
+    bottom: 0.25em;
+    padding: -1em;
+    padding-top: -2.5em;
+    font-size: 90%;
+    border-radius: 1em !important;
+}
+
+.monitors-table {
+    border-bottom: 1px solid #004152;
+    text-align: center;
+}
+.monitors-table td {
+    vertical-align: middle;
+}
+
+.room-header {
+    padding-top: 1em;
+}
+.room-header i{
+    color: #004152;
+}
+
+#basic-text1 {
+    background-color: #004152;
+}
+
+/* Admin page styles */
+
+#monitorsTable {
+    /* font-size: 0.9rem !important; */
+    text-align: center;
+}
+#monitorsTable  td {
+    /* margin: 0 */
+    vertical-align: middle !important;
+
+}
+#show-image-edits-container {
+    padding: 0.5em;
+}
+#show-image-edits-container h4 {
+    color: #004152;
+    font-weight: 500;
+}
+.image-container-style {
+    padding: 1em;
+    border-top: 2px solid #004152;
+    background-color: #eef1f1bd;
+}
+#monitor-list-data {
+    margin-right: 10px;
+}
+.table-actions {
+    text-align: center;
+}
+
+#second-container {
+    display: none;
+    /* display: inline; */
+}
+
+.vessel-edits-div button {
+    margin-bottom: 1.5em;
+}
+
+#main-container {
+    display: none;
+    /* display: inline; */
+}
+.vessel-current-header, .vessel-current-span {
+    font-weight: 300;
+    line-height: 1.2;
+    font-size: 2rem !important;
+    color: #007bff;
+}
+
+#add-vessel-container {
+    display: none;
+}
+
+.add-vessel-form{
+    /* max-width: 33%; */
+    margin-top: -1.5rem !important;
+}
+
+#edit-vessel-form{
+    /* display: none;s */
+}
+
+.rooms-edits-div {
+    /* padding: 1.5em; */
+    margin-top: 1.7em;
+}
+.room-edits-span {
+    font-size: 1.5em;
+    color: #004152;
+}
+
+.room-edits-ul {
+    max-width: 50%;
+    margin-top: 1em;
+    /* color:  */
+}
+.room-edits-ul li {
+    color: #004152;
+    font-weight: 400;
+    font-size: 1em;
+  
+}
+.room-edits-ul span {
+    vertical-align: middle !important;
+}
+
+/* edit form styles */
+#saveEdit, #saveEditRoom, #addVesselForm, #saveAddRoom {
+    max-width: 50%;
+    padding: 0.8em;
+    border-radius: 0.2em;
+    background-color: #ededed;
+    border: 1px solid lightgrey;
+}
+
+#saveEdit > input:first-of-type ,
+#saveEditRoom >input:first-of-type ,
+#saveAddRoom >input:first-of-type 
+{
+    width: 75% !important;
+}
+
+
+.vessel-current-span {
+    font-size: 20px;
+    /* margin-left: 1%; */
+}
+
+.room-list-ul,.positions-list{
+    list-style-type: none;
+    white-space:nowrap;
+}
+.room-list-ul {
+    padding-bottom: 1em;
+    padding-left: 1em;
+    display: inline-block;
+    overflow: auto;
+    /* white-space: nowrap;
+    overflow-y: hidden; */
+    width: 74vw;
+    
+    /* margin: 0 0 1em; */
+}
+
+#admin-page .room-item {
+    border: 1px solid white;
+    font-size: 18px;
+    display: inline;
+    /* vertical-align: top; */
+
+}
+
+.alert-msg-success-style, .alert-msg-danger-style {
+    max-width: 50%;
+}
+
+.close-icon {
+    padding: 0.5em;
+}
+
+.edits-container{
+    /* background-color: gray; */
+}
+
+.admin-vessel-item {
+    text-align: center;
+}
+
+.icon-mons-edit-vesselId {
+    color: white !important;
+}
+
+
+#show-room-image-close-icon{
+    float: right;
+    padding-bottom: 0.7em;
+}
+
+.show-room-image {  
+    max-width: 90%;
+}
+.saveAddImageDiv {
+    width: 64.5% !important;
+}
+
+.canvas-image-edit{
+    /* margin-left: -7rem; */
+}
+
+#canvas-image-parentDiv {
+    
+}
+
+.custom-file-label-style{
+    max-width: 77.5%;
+}
+
+#noRoomsTextEl{
+    width: 50%;
+}
+
+.new-monitor-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+.room-list-item-bottom {
+    border-bottom: 2px solid #007bff !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+#admin-vessel-item-name {
+    padding: 1em;
+    color: #007bff;
+}
+
+
+
+
+/*----------------- Loign page styles ----------------- */
+
+#login-page {
+    background-color: #004152e6;
+}
+
+.login-form {
+    /* width: 600px; */
+    width: 37.5em;  
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    
+}
+
+
+#login-form {
+    /* background-color: #E4E4E4; */
+    background-color: white;
+    border: 1px solid #00313e !important;
+}
+
+#login-form > p {
+    color: #004C93;
+}
+
+.login-form-logo > img {
+    left: 50%;
+    transform: translate(50%, -50%);
+}
+
+
+
+
+/* Bootstrap override */
+/* Override a style to #004152 !important */

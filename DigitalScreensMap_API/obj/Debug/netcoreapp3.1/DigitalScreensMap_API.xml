@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalScreensMap_API</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalScreensMap_API.Auth.ILdapValidator">
+            <summary>
+            Ldap related contracts
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Auth.ILdapValidator.Validate(System.String,System.String)">
+            <summary>
+            Check if user in Ldap 
+            </summary>
+            <param name="userId">Ldap user name without domain name</param>
+            <param name="password">Ldap passsword</param>
+        </member>
+        <member name="T:DigitalScreensMap_API.Auth.ISimpleRoleProvider">
+            <summary>
+            Defines the base functionality of the class used to provide applicative roles for a user when using the simple role
+            authorization.
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Auth.ISimpleRoleProvider.GetUserRolesAsync(System.String)">
+            <summary>
+            Loads and returns the role names for a given user name.
+            </summary>
+            <param name="userName">The login name of the user for which to return the roles.</param>
+            <returns>
+            A collection of <see cref="T:System.String" /> that describes the roles assigned to the user;
+            An empty collection of no roles are assigned to the user.
+            </returns>
+            <remarks>
+                <para>Beware that this method is called for each controller call. It might impact performance.</para>
+                <para>
+                If Windows authentication is used, the passed <paramref name="userName" />
+                is the full user name including the domain or machine name (e.g "CostroDomain\JohnDoe" or
+                "JOHN-WORKSTATION\JohnDoe").
+                </para>
+                <para>
+                The returned roles names can be used to restrict access to controllers using the <see cref="!:AuthorizeAttribute" />
+                (<c>[Authorize(Roles="...")]</c>
+                </para>
+            </remarks>
+        </member>
+        <member name="T:DigitalScreensMap_API.Auth.LdapManager">
+            <summary>
+            Ldap related tasks manager
+            </summary>
+        </member>
+        <member name="F:DigitalScreensMap_API.Auth.LdapManager.DomainName">
+            <summary>
+            Domain name from config file
+            </summary>
+        </member>
+        <member name="F:DigitalScreensMap_API.Auth.LdapManager.PortNumber">
+            <summary>
+            Port name form config file, default 389
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Auth.LdapManager.Validate(System.String,System.String)">
+            <summary>
+            Check if user in Ldap 
+            </summary>
+            <param name="userId">Ldap user name without domain name</param>
+            <param name="password">Ldap passsword</param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Auth.LdapManager.UserFullId(System.String)">
+            <summary>
+            User full id 
+            </summary>
+            <param name="userId">User name</param>
+            <returns>userName@domain</returns>
+        </member>
+        <member name="T:DigitalScreensMap_API.Auth.SimpleRoleAuthorizationServiceCollectionExtensions">
+            <summary>
+            Provides the extension methods to enable and register the simple role authentication on an Asp.Net Core web site.
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Auth.SimpleRoleAuthorizationServiceCollectionExtensions.AddSimpleRoleAuthorization``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Activates simple role authorization for Windows authentication for the ASP.Net Core web site.
+            </summary>
+            <typeparam name="TRoleProvider">The <see cref="T:System.Type"/> of the <see cref="T:DigitalScreensMap_API.Auth.ISimpleRoleProvider"/> implementation that will provide user roles.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> onto which to register the services.</param>
+        </member>
+        <member name="T:DigitalScreensMap_API.Auth.SimpleRoleAuthorizationTransform">
+            <summary>
+            Implements a <see cref="T:Microsoft.AspNetCore.Authentication.IClaimsTransformation" /> that uses a <see cref="T:DigitalScreensMap_API.Auth.ISimpleRoleProvider" /> to fetch and apply
+            applicative roles
+            for a user.
+            <para>
+            To use, you need to implement a class that inherit from <see cref="T:DigitalScreensMap_API.Auth.ISimpleRoleProvider" /> and use the
+            <see cref="M:DigitalScreensMap_API.Auth.SimpleRoleAuthorizationServiceCollectionExtensions.AddSimpleRoleAuthorization``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)" /> extension
+            method
+            in the <c>ConfigureServices</c> method of the <c>Startup</c> class to enable the simple role authorization and
+            associate your simple role provider implementation.
+            </para>
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.ImageUploadController.AddImage(System.Int64,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Save Image with Room Id.
+            </summary>
+            <param name="id"></param>
+            <param name="uploadedFile"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.ImageUploadController.GetImageById(System.Int64)">
+            <summary>
+            Get specific Image by Room Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.ImageUploadController.Delete(System.Nullable{System.Int64})">
+            <summary>
+            Delete a specific Image by Room Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.Get">
+            <summary>
+            Get all Monitors.
+            </summary>
+            
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.GetMonitorsByRoom(System.Int64)">
+            <summary>
+            Get all Monitors from Room by Room Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.Get(System.String)">
+            <summary>
+            Get specific Monitor by Monitor Code.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.Post(DigitalScreensMap_API.Models.Monitor)">
+             <summary>
+             Create a Monitor.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/monitors/add
+                {
+            
+                    "code": "Ga03",
+                    "name": "Serenade Ga03",
+                    "roomId": 2,
+                    "room": null,
+                    "vesselId": 2,
+                    "vessel": null,
+                    "ipAddress": "10.116.26.44",
+                    "macAaddress": "222",
+                    "info": "222"
+                }
+            
+             </remarks>
+             <param name="monitor"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.Put(System.String,DigitalScreensMap_API.Models.Monitor)">
+             <summary>
+             Update specific Monitor by Monitor Code.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/monitors/update/{code}
+                {
+                    "monitorId": 5,
+                    "code": "Ga01",
+                    "name": "Serenade Ga01",
+                    "roomId": 1,
+                    "room": null,
+                    "vesselId": 1,
+                    "vessel": null,
+                    "ipAddress": "10.116.26.44",
+                    "macAddress": "F4 4D 30 63 F6 6F",
+                    "info": "just 222"
+                }
+            
+             </remarks>
+             <param name="code"></param>
+             <param name="monitor"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.MonitorsController.Delete(System.String)">
+            <summary>
+            Delete a specific Monitor by Monitor Code.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.PositionsController.Get">
+            <summary>
+            Get all Positions of all Monitors.
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.PositionsController.GetPositionsByMonitor(System.Int64)">
+            <summary>
+            Get all Positions from Monitor by Monitor Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.PositionsController.Post(DigitalScreensMap_API.Models.Position)">
+             <summary>
+             Create a Position.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/positions/add
+                {
+            
+                    "x1": 585,
+                    "x2": 585,
+                    "y1": 546,
+                    "y2": 586,
+                    "monitorId": 6,
+                    "monitor": null
+                }
+            
+             </remarks>
+             <param name="position"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.PositionsController.Put(System.Int64,DigitalScreensMap_API.Models.Position)">
+             <summary>
+             Update specific Position by Position Id.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/positions/update/{positionId}
+                {
+                    "positionId": 3,
+                    "x1": 584,
+                    "x2": 584,
+                    "y1": 228,
+                    "y2": 323,
+                    "monitorId": 5,
+                    "monitor": null
+                }
+            
+             </remarks>
+             <param name="id"></param>
+             <param name="position"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.PositionsController.Delete(System.Nullable{System.Int64})">
+            <summary>
+            Delete a specific Position by Monitor Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.RoomsController.Get">
+            <summary>
+            Get all Rooms.
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.RoomsController.Get(System.Int64)">
+            <summary>
+            Get specific Room by Room Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.RoomsController.Post(DigitalScreensMap_API.Models.Room)">
+             <summary>
+             Create a Room.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/rooms/add
+            {
+            
+                "name": "Bussiness lounge",
+                "vesselId": 1,
+                "vessel": null,
+                "monitor": null,
+                "image": null
+            }
+            
+             </remarks>
+             <param name="room"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.RoomsController.Put(System.Int64,DigitalScreensMap_API.Models.Room)">
+             <summary>
+             Update specific Room by Room Id.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/rooms/update/{roomId}
+                {
+                    "roomId": 3,
+                    "name": "Superstore3",
+                    "vesselId": 1,
+                    "vessel": null,
+                    "monitor": null,
+                    "image": null
+                }
+            
+             </remarks>
+             <param name="id"></param> 
+             <param name="room"></param> 
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.RoomsController.Delete(System.Nullable{System.Int64})">
+            <summary>
+            Delete a specific Room by Room Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.VesselsController.Get">
+            <summary>
+            Get all Vessels.
+            </summary>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.VesselsController.Get(System.Int64)">
+            <summary>
+            Get Vessel by Vessel Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.VesselsController.Post(DigitalScreensMap_API.Models.Vessel)">
+             <summary>
+             Create a Vessel.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST api/vessels/add
+                {
+            
+                    "name": "Megastar"
+                }
+            
+             </remarks>
+             <param name="vessel"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.VesselsController.Put(System.Int64,DigitalScreensMap_API.Models.Vessel)">
+             <summary>
+             Update specific Vessel by Vessel Id.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/vessels/update/{vesselId}
+                {
+                    "vesselId": 1,
+                    "name": "Megastar1",
+                    "rooms": null,
+                    "monitors": null
+                }
+            
+             </remarks>
+             <param name="id"></param>
+             <param name="vessel"></param>
+        </member>
+        <member name="M:DigitalScreensMap_API.Controllers.VesselsController.Delete(System.Nullable{System.Int64})">
+            <summary>
+            Delete specific Vessel by Vessel Id.
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>DigitalScreensMap API</title>
+
+  <link href="../css/all.css" rel="stylesheet">
+  <link href="../css/fonts.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/mdb.min.css" rel="stylesheet">
+  <link href="../css/site.css" rel="stylesheet" />
+  <script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+</head>
+
+<body id="admin-page">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+    <img src="../images/logo_tallinksilja_white.svg" alt="Logo">
+    <br>
+    <a class="navbar-brand project-name-header" href="/">Digital Screens Map</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- Menu List -->
+      <ul id="menu-header" class="navbar-nav mr-auto">
+      </ul>
+      <ul id="menu-header-logout" class="navbar-nav">
+      </ul>
+    </div>
+  </nav>
+  <div id="root">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 edits-container">
+          <div id="vessel-list"></div>
+        </div>
+        <div class="col-md-9 edits-container">
+          <div class="container-fluid" id="main-container">
+            <div class="row">
+              <div id="admin-vessel-item-name"></div>
+            </div>
+            <div class="row">
+              <div id="room-list"></div>
+            </div>
+            <div id="monitor-list-data"></div>
+          </div>
+
+          <!-- Container for vessel and room edits -->
+          <div id="second-container" class="container-fluid">
+            <!-- <div class="row"></div> -->
+            <div class="md-form" id="edit-vessel-div"></div>
+          </div>
+
+          <!-- Container for vessel adding -->
+          <div id="add-vessel-container">
+            <div class="md-form add-vessel-form">
+              <form action="javascript:void(0);" method="POST" id="addVesselForm" onsubmit="crudVessel.Add()">
+                <h3>Add Vessel</h3>
+                <input type="text" id="input-add-vessel" class="form-control" placeholder="Vessel name">
+                <!-- <label for="add-vessel">Add New Vessel</label> -->
+                <button type="submit" class="btn btn-default btn-sm"><i class="far fa-plus-square"></i></button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row" id="image-container">
+        <!-- Container for showing room image edits -->
+        <div class="col-md-3">
+          <div id="show-image-edits-container">
+          </div>
+        </div>
+
+        <!-- Container for showing room image -->
+        <div class="col-md-9">
+          <div id="show-image-container">
+          </div>
+          <!-- <img id="output" width="200" height="800" /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+</body>
+<script src="../js/helpers.js" asp-append-version="true"></script>
+<script src="../js/positions-setup.js" asp-append-version="true"></script>
+<script src="../js/api.js" asp-append-version="true"></script>
+<script src="../js/admin.js" asp-append-version="true"></script>
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+
+<!-- Bootstrap tooltips -->
+<!-- <script type="text/javascript" src="../js/libs/popper.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../js/libs/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<!-- <script type="text/javascript" src="../js/libs/mdb.min.js"></script> -->
+
+</html>

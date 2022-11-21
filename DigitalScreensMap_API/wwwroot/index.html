@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DigitalScreensMap API</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/site.css" />
+
+</head>
+
+<body id="map-page">
+
+    <!-- <header></header> -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+        <img src="images/logo_tallinksilja_white.svg" alt="Logo">
+        <br>
+        <a class="navbar-brand project-name-header" href="/">Digital Screens Map</a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <!-- Menu List -->
+            <ul id="menu-header" class="navbar-nav">
+            </ul>
+            <ul id="menu-header-logout" class="navbar-nav">
+            </ul>
+        </div>
+    </nav>
+    <div id="root">
+        <div class="row border-help">
+            <div class="col-md-8">
+                <!-- <h4>DS VESSEL MAP</h4> -->
+
+                <!-- <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> -->
+            </div>
+        </div>
+        <div class="row main-row">
+            <div class="col-md-3 border-help left-block">
+                <div class="main-vessels">
+                    <div id="select-vessel" class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="select-vessel-box"><i class="fas fa-ship"
+                                    data-toggle='tooltip' title='Select vessel' data-placement='left'></i>
+                            </label>
+                        </div>
+                        <select class="custom-select" id="select-vessel-box" onchange="selectVessel();">
+                            <option value="0">Choose vessel...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="main-rooms">
+                    <div id="select-room" class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="select-room-box">
+                                <i class="far fa-image" data-toggle='tooltip' title='Select Room'
+                                    data-placement='left'></i>
+                            </label>
+                        </div>
+                        <select class="custom-select" id="select-room-box" onchange="selectPicture();">
+                            <option value="0">Choose...</option>
+                        </select>
+                        <div class="tsm-room-url-div">
+                            <a href="#" id="tsm-room-url-a" target="_blank">TSM</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- <div class="update-btn">
+                    <button class="btn btn-outline-primary" onclick="selectPicture();">Update</button>
+                </div> -->
+                <div class="main-monitors">
+                    <div id="monitors-total"></div>
+                    <div id="room-monitors" class=""></div>
+                </div>
+            </div>
+            <div class="col-md-9 right-block">
+                <div class="main-board">
+                    <div id="mons-state" class="mons-all canvas-show-style">
+                        <div class="row">
+                            <div class="mons-green"></div>
+                            <span>OK</span><br>
+                            <div class="mons-red"></div>
+                            <span>Not OK</span><br>
+                            <div class="mons-blue"></div>
+                            <span>N/A</span>
+                        </div>
+                    </div>
+                    <img id="defaultPicture" src="images/cruise_ship.png" alt="Default picture">
+                    <canvas class="canvas-show-style" id="myCanvas"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="js/helpers.js" asp-append-version="true"></script>
+    <script src="js/api.js" asp-append-version="true"></script>
+    <script src="js/site.js" asp-append-version="true"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>DigitalScreensMap API</title>
+
+  <link rel="stylesheet" href="../css/all.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/mdb.min.css">
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+
+<body id="monitors-page" class="">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+    <img src="../images/logo_tallinksilja_white.svg" alt="Logo">
+    <br>
+    <a class="navbar-brand project-name-header" href="/">Digital Screens Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul id="menu-header" class="navbar-nav mr-auto">
+      </ul>
+      <ul id="menu-header-logout" class="navbar-nav">
+      </ul>
+    </div>
+  </nav>
+  <div id="root">
+    <div class="container-fluid">
+      <div class="row main-content">
+        <div class="col-md-3 ">
+          <div id="vessel-list"></div>
+          <div id="room-list"></div>
+        </div>
+        <div class="col-md-8">
+          <div class="container-fluid">
+            <div class="row test"></div>
+            <div class="row">
+              <div class="input-group p-3 search-block">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-text1">
+                    <i class="fas fa-search text-white" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <input type="search" id="myInput" class="form-control search-input" placeholder="Search"
+                  aria-label="Search" aria-describedby="basic-addon1" data-table="monitors-table"
+                  onsearch="filterTable()" onkeyup="filterTable()" />
+                <select id="mylist" class='browser-default custom-select'>
+                  <option>Code</option>
+                  <option>Name</option>
+                  <option>Vessel</option>
+                  <option>IP address</option>
+                  <option>Mac address</option>
+                  <option>Info</option>
+                </select>
+              </div>
+              <!-- <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                    <img src="/icons/search.svg" alt="" width="24" height="24" title="Bootstrap" />
+                  </span>
+                </div>
+                
+              </div> -->
+            </div>
+          </div>
+          <div id="monitor-list"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    function filterTable() {
+      var input, filter, table, tr, td, i, alltables;
+      alltables = document.querySelectorAll(".monitors-table");
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      var selectBox = document.getElementById("mylist");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      // console.warn("selectedValue ", selectBox.selectedIndex);
+
+      alltables.forEach(function (table) {
+        tr = table.getElementsByTagName("tr");
+        console.log("-----------------", tr);
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[selectBox.selectedIndex + 1];
+          if (td) {
+            var tableID = table.id.split('-')[2];
+            var tableHeader = document.getElementById("room-header-" + tableID);
+            // console.warn("tableID ", tableID);
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+              table.style.display = "";
+              tableHeader.style.display = "";
+
+            } else {
+              tr[i].style.display = "none";
+              table.style.display = "none";
+              tableHeader.style.display = "none";
+            }
+          }
+          // else {
+          //   var tableID = table.id.split('-')[2];
+          //   var tableHeader = document.getElementById("room-header-" + tableID);
+          //   table.style.display = "none";
+          //   tableHeader.style.display = "none";
+
+          // }
+        }
+      });
+    }
+  </script>
+  <script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/libs/mdb.min.js"></script>
+  <script type="text/javascript" src="../js/libs/popper.min.js"></script>
+  <script type="text/javascript" src="../js/libs/bootstrap.min.js"></script>
+
+  <script src="../js/helpers.js" asp-append-version="true"></script>
+  <script src="../js/api.js" asp-append-version="true"></script>
+  <script src="../js/monitors.js" asp-append-version="true"></script>
+</body>
+
+</html>

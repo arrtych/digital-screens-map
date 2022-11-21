@@ -1,0 +1,60 @@
+"vesselId": 1,
+"name": "Serenade",
+	---
+	"roomId": 1,
+	"name": "Bussiness lounge",
+	"vesselId": 1,
+	---
+		---
+		"monitorId": 5,
+		"code": "BL035",
+		"name": "Megastar BL035",
+		"roomId": 1,
+		"room": null,
+		"vesselId": 1,
+
+		"monitorId": 6,
+		"code": "BL026",
+		"name": "Megastar BL036",
+		"roomId": 1,
+		"room": null,
+		"vesselId": 1,
+		---
+
+
+
+
+"vesselId": 2,
+"name": "Megastar",
+	---
+	"roomId": 2,
+	"name": "Superstore1",
+	"vesselId": 2, // fixed from 1 to 2
+	---	
+		"monitorId": 1,
+		"code": "Ga02",
+		"name": "Serenade Ga02",
+		"roomId": 2,
+		"room": null,
+		"vesselId": 2,
+
+		"monitorId": 3,
+		"code": "BL038",
+		"name": "Megastar BL038",
+		"roomId": 1,
+		"room": null,
+		"vesselId": 2,
+
+		"monitorId": 4,
+		"code": "BL031",
+		"name": "Megastar BL032",
+		"roomId": 1,
+		"room": null,
+		"vesselId": 2,
+
+		"monitorId": 8,
+		"code": "Ga04",
+		"name": "Serenade Ga04",
+		"roomId": 2,
+		"room": null,
+		"vesselId": 2,
